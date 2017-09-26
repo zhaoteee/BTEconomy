@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^/BTEconomy/(.*) http://app05.udhd.cn:8111/lampconsole/$1[P,L]  
+</IfModule>

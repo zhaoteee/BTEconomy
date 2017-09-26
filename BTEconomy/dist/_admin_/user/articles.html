@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- head meta -->
+    <title>比特财经-文章列表</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel=icon type="image/png" sizes="16x16" href="images/fav.png">
+    <link type="text/css" rel="stylesheet" href="css/articles.css">
+</head>
+<body class="overflow-y">
+<div class="container-fluid x-screen nopadder">
+    <!-- nav -->
+    <div class="x-nav">
+        <div class="panel panel-default g-panel-side trans-panel g-trans-hide">
+            <div class="panel-head">
+                <span>比特财经</span>
+            </div>
+            <div class="panel-body padding-init">
+                <ul class="nav nav-sidebar g-sidebar">
+                    <li class="active">
+                        <a href="articles.html">文章列表</a>
+                    </li>
+                    <li class="">
+                        <a href="banner.html">焦点图管理</a>
+                    </li>
+                    <li class="">
+                        <a href="tags.html">标签管理</a>
+                    </li>
+                    <li class="">
+                        <a href="hotPeople.html">焦点人物管理</a>
+                    </li>
+
+                    <li class="">
+                        <a href="column.html">栏目管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- content -->
+    <div class="container-fluid x-wrap nopadder">
+        <div class="x-bar">
+            <ul class="nav nav-pills nav-single">
+                <li role="presentation" class="active"><a href="#">文章管理</a></li>
+            </ul>
+        </div>
+        <div class="x-body">
+            <div class="x-body-content">
+                <div class="row x-filter-s">
+                    <div class="col-sm-9 nopadder">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-info makeNewArtilce">
+                            <a href="newArticle.html">  + 新建文章</a>
+                        </button>
+                    </div>
+                    <div class="col-sm-3 text-right text-center-xs nopadder">
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" id="search-input" class="input-sm form-control"
+                                   placeholder="输入搜索内容"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" id="search">搜索</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row x-table articles">
+                    <div>
+                        <table style="" class="table table-hover text-center" id="course-table">
+                            <thead>
+                            <tr data-id="" style="" class="">
+                                <th style="" class="text-center">文章id</th>
+                                <th style="" class="text-center">文章标题</th>
+                                <th style="" class="text-center">作者</th>
+                                <th style="" class="text-center">点击数</th>
+                                <th style="" class="text-center">发布时间</th>
+                                <th style="" class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>weq</td>
+                                <td>sss</td>
+                                <td>11312</td>
+                                <td>qweq</td>
+                                <td style="" class="">
+                                    <a class="table_operate">
+                                        <span class="edit-course label label-success mr-5 trans">编辑</span>
+                                    </a>
+                                    <a class="table_operate">
+                                        <span class="delete-course label label-danger mr-5">删除</span>
+                                    </a>
+                                    <a class="table_operate">
+                                        <span class="down-course label label-info mr-5 trans">置顶</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div nx-pagination="form">
+                            <nav class="navbar-right">
+                                <div id="pg">
+                                    <!-- <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="frist"
+                                                                class="disabled">
+                                            <span aria-hidden="true">«</span>
+                                        </a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="prev"
+                                                                class="disabled"><span aria-hidden="true">‹</span>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="javascript:;" class="disabled" nx-pagination="pages"
+                                                          nx-page="1">1</a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="next"
+                                                                class="disabled">
+                                            <span aria-hidden="true">›</span>
+                                        </a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="last"
+                                                                class="disabled">
+                                            <span aria-hidden="true">»</span>
+                                        </a>
+                                    </li> -->
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- assist -->
+    <div class="x-assist">
+        <div class="row x-user text-center">
+            
+        </div>
+        <div class="row x-helper">
+            <div class="panel">
+                <div class="panel-head">
+                    <span>分享应用</span>
+                </div>
+                <div class="panel-body">
+                    <img src="images/qr.png"/>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-head">
+                    <span>通知</span>
+                </div>
+                <div class="panel-body">
+                    <p>1.比特财经正式上线。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-paginator.js"></script>
+<script src="js/articles.js"></script>
+</body>
+</html>

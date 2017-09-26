@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情</title>
+    <link rel=icon type="image/png" sizes="16x16" href="./static/images/fav.png">
+    <link rel="stylesheet" href="./static/css/normalize.css">
+    <link rel="stylesheet" href="./static/css/common.css">
+    <link rel="stylesheet" href="./static/css/articleDetail.css">
+
+</head>
+<body>
+<header>
+  <div class="content nav-wrapper">
+    <div class="logo">
+    <a href="./index.html">
+      <img src="./static/images/btcjLogo.png" alt="比特财经">
+    </a>
+    </div>
+    <nav class="head-nav">
+      <a class="current" href="./index.html">首页</a>
+      <!-- <a href="javascript:;">栏目一</a> -->
+    </nav>
+    <a class="contribute" href="./about.html">投稿</a>
+  </div>
+</header>
+<div class="content content-wrapper clearfix">
+  <div class="leftContent detailLeftContent">
+    <div class="aboutArticle">
+        <h3 class="title"></h3>
+        <p class="subTitle"></p>
+        <div class="info">
+            <span class="author">作者：</span>
+            <span class="from">来源：</span>
+            <span class="time">小时前</span>
+        </div>
+    </div>
+    <div class="articleContent">
+        
+    </div>
+    <div class="articleTags">
+        <!-- <a href="javascript:;">航天</a> -->
+    </div>
+    <div class="wantRead">
+        <h4>你可能感兴趣的文章</h4>
+        <ul class="wantReadList">
+            <!-- <li>
+                <a href="#"><img src="" alt=""></a>
+                <h3>文章主标题</h3>
+            </li> -->
+        </ul>
+    </div>
+  </div>
+
+  <!-- 右侧内容 -->
+  <div class="rightContent detailRightContent">
+    <div class="hotPeople">
+      <h3>焦点人物</h3>
+      <ul class="picList">
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+      </ul>
+    </div>
+    <div class="hotArticles">
+      <h3 class="title">热门文章</h3>
+      <ul class="picList">
+        <li>
+          <img src="" alt="">
+          <h4>文字主标题</h4>
+        </li>
+        <li>
+          <img src="" alt="">
+          <h4>文字主标题</h4>
+        </li>
+      </ul>
+    </div>
+    <div class="hotTags">
+      <h3 class="title">热门标签</h3>
+      <div class="wrapper">
+        <!-- <a href="javascript:;">科技</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>版权所有©️杭州蓝蛙科技有限公司</p>
+  <p>浙ICP备16016148号-1</p>
+</footer>
+<script src="static/js/jquery.js"></script>
+<script src="static/js/index.js"></script>
+<script>
+  $(function() {
+    var articleid;
+    getUrl();
+    initColumns();
+    getHotPeos();
+    initTags(1);
+    getHotArticles();
+    getIntrestArticles();
+    $.ajax({
+        type: 'get',
+        url: 'http://www.lopkj.cn:8111/lampconsole/hello.action?id='+articleid,
+        dataType:"jsonp",
+        jsonp: "callback",
+        jsonpCallback: 'jsonpCallback',
+        success: function (msg) {
+          jsonpCallback(msg);
+          function jsonpCallback(msg) {
+          }
+        }
+    })
+      //  获取url
+    function getUrl() {
+        var url = window.location.href;
+        var aid = url.split('?')[1]
+        if (aid) {
+            aid = aid.split('&')[0]
+        }
+        if (aid && aid.split('=')[0]==='id') {
+            articleid = aid.split('=')[1];
+            getArticleInfo(articleid);
+        }
+    }
+     // 获取对应id的课程信息
+    function getArticleInfo(articleid) {
+        $.ajax({
+            type: 'get',
+            url: 'http://www.lopkj.cn:8111/lampconsole/selectWordsById.action?id='+articleid,
+            dataType:"jsonp",
+            jsonp: "callback",
+            jsonpCallback: 'jsonpCallbackww',
+            success: function (msg) {
+              jsonpCallbackww(msg)
+            }
+        })
+        function jsonpCallbackww(msg) {
+          var data = msg.word;
+          insertInfo(data);
+        }
+    }
+    // 填入课程信息
+    function insertInfo(data) {
+        var tags = data.bList;
+        var time = Math.floor((new Date() - Date.parse(data.date.split('.')[0].replace(/-/g,"/")))/3600000);
+        var res = time < 24 ? time+'小时前' : Math.ceil(time / 24)+'天前';
+        if (time < 1) {
+          res = Math.floor(((new Date() - Date.parse(data.date.split('.')[0].replace(/-/g,"/")))/1000)/60)+'分钟前';
+        }
+        $('.aboutArticle .title').text(data.name);
+        $('.aboutArticle .subTitle').text(data.fname);
+        $('.aboutArticle .info .author').html('作者：<a href="column.html?name='+data.userr+'">'+data.userr+'</a>');
+        $('.aboutArticle .info .from').text('来源：'+data.source);
+        $('.aboutArticle .info .time').text(res);
+        $('.articleContent').html(data.word);
+        //渲染标签列表
+        var str = '';
+        for (var i = 0, len = tags.length; i < len; i++) {
+          str +=  '<a href="tags.html?id='+tags[i].id+'">'+tags[i].name+'</a>' ;
+        }
+        $('.articleTags').html(str);
+
+    }
+     // 获取感兴趣的文章
+    function getIntrestArticles() {
+      var str = '';
+        $.ajax({
+            type: 'get',
+            url: 'http://www.lopkj.cn:8111/lampconsole/Interes.action',
+            dataType:"jsonp",
+            jsonp: "callback",
+            jsonpCallback: 'jsonpCallbacki',
+            success: function (msg) {
+              jsonpCallbacki(msg);
+            }
+        })
+        function jsonpCallbacki(msg) {
+          var data = msg.wList;
+          for (var i = 0, len = data.length; i < len; i++) {
+            str +=  '<li><a href="articleDetail.html?id='+data[i].id+'"><img src='+data[i].pic+'>'+
+                        '</a><h3>'+data[i].name+'</h3></li>' ;
+          }
+          $('.wantReadList').html(str);
+        }
+    }
+  })
+</script>
+</body>
+</html>

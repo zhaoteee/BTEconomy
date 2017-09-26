@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>比特财经-标签管理</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel=icon type="image/png" sizes="16x16" href="images/fav.png">
+    <link type="text/css" rel="stylesheet" href="css/column.css">
+</head>
+<body class="overflow-y">
+<div class="container-fluid x-screen nopadder">
+    <!-- nav -->
+    <div class="x-nav">
+        <div class="panel panel-default g-panel-side trans-panel g-trans-hide">
+            <div class="panel-head">
+                <span>比特财经</span>
+            </div>
+            <div class="panel-body padding-init">
+                <ul class="nav nav-sidebar g-sidebar">
+                    <li class="">
+                        <a href="articles.html">文章列表</a>
+                    </li>
+                    <li class="">
+                        <a href="banner.html">焦点图管理</a>
+                    </li>
+                    <li class="active">
+                        <a href="tags.html">标签管理</a>
+                    </li>
+                    <li class="">
+                        <a href="hotPeople.html">焦点人物管理</a>
+                    </li>
+
+                    <li class="">
+                        <a href="column.html">栏目管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- content -->
+    <div class="container-fluid x-wrap nopadder">
+        <div class="x-bar">
+            <ul class="nav nav-pills nav-single">
+                <li role="presentation" class="active"><a href="#">标签管理</a></li>
+            </ul>
+        </div>
+        <div class="x-body">
+            <div class="x-body-content">
+                <div class="row x-table">
+                    <div>
+                        <table style="" class="table table-hover tagsWrapper">
+                            <thead>
+                            <tr data-id="" style="" class="">
+                                <th style="width: 10%" class=""></th>
+                                <th style="width: 40%" class="">标签名称</th>
+                                <th style="width: 30%" class="">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="">
+                                <td style="" class="">1</td>
+                                <td style="" class="">教育</td>
+                                <td style="" class="">
+                                    <a class="table_operate">
+                                        <span class="edit-tag label label-success mr-5 trans">编辑</span>
+                                    </a>
+                                    <a class="table_operate">
+                                        <span class="delete-tag label label-danger mr-5">删除</span>
+                                    </a>  
+                                   
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div nx-pagination="form">
+                            <nav class="navbar-right">
+                                <div id="pg">
+                                    <!-- <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="frist"
+                                                                class="disabled">
+                                            <span aria-hidden="true">«</span>
+                                        </a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="prev"
+                                                                class="disabled"><span aria-hidden="true">‹</span>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="javascript:;" class="disabled" nx-pagination="pages"
+                                                          nx-page="1">1</a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="next"
+                                                                class="disabled">
+                                            <span aria-hidden="true">›</span>
+                                        </a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="javascript:;" nx-pagination="last"
+                                                                class="disabled">
+                                            <span aria-hidden="true">»</span>
+                                        </a>
+                                    </li> -->
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="addCl-1 col-sm-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addcl1">
+                            新建标签
+                    </button>
+
+                    <!-- 新建标签 -->
+                    <div class="modal fade" id="addcl1" tabindex="-1" role="dialog" aria-labelledby="first">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="first">新建标签</h4>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <input style="display:inline-block;width: 80%; height:40px" type="text"
+                                        placeholder="输入标签名称">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary js-addTag">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 修改标签 -->
+                     <div class="modal fade" id="editTag" tabindex="-1" role="dialog" aria-labelledby="first">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="first">编辑标签</h4>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <input style="display:inline-block;width: 80%; height:40px" type="text"
+                                        placeholder="输入标签名称">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary js-editTag">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- assist -->
+    <div class="x-assist">
+        <div class="row x-user"></div>
+        <div class="row x-helper">
+            <div class="panel">
+                <div class="panel-head">
+                    <span>分享应用</span>
+                </div>
+                <div class="panel-body">
+                    <img src="images/qr.png"/>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-head">
+                    <span>通知</span>
+                </div>
+                <div class="panel-body">
+                    <p>1.比特财经正式上线。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-paginator.js"></script>
+<script src="js/tags.js"></script>
+</body>
+</html>

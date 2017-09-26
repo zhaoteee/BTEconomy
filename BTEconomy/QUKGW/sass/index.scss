@@ -1,0 +1,618 @@
+.content {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden
+}
+.clearfix {
+  zoom: 1;
+}
+html ,body {
+  background: #f4f8f8;  
+}
+.wrapper {
+  background: url('../images/banner.png') no-repeat;
+  background-size: 1920px 100%;
+  background-position: -320px;
+}
+header{
+  display: block;
+  width: 100%;
+  height: 120px;
+  transition: all .4s;
+  z-index: 8888;
+  .content {
+    position: relative;
+  }
+  .logo {
+    position: absolute;
+    left: 0;
+    top: 39px;
+    a {
+      text-decoration: none;
+    }
+    h3 {
+      color: #4585f3;
+      font-size: 43px;
+      margin: 0;
+    }
+  }
+  nav {
+    height: 120px;
+    line-height: 120px;
+    margin-left: 410px;
+    a {
+      &.wbDownload {
+        color: #4585f3;
+      }
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+      margin-right: 30px;
+      text-decoration: none;
+      color: #FFF;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      &:after {
+        content: "";
+        width: 0;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        top: 83px;
+        background: #4585f3;
+        transition: all .4s;
+      }
+      &.cur:after {
+        width: 100%;
+      }
+    }
+  }
+}
+section#banner {
+  margin-top: 120px;
+  .banner {
+    width: 100%;
+    height: 714px;
+   
+    h1 {
+      padding-top: 136px;
+      margin: 0;
+      font-size: 51px;
+    }
+    h2 {
+      margin: 20px 0 40px;
+    }
+    h1, h2, p {
+      color: #fff;
+      text-align: center;
+    }
+    p.con {
+      font-weight: 200;
+    }
+    .intro {
+      margin-top: 48px;
+      line-height: 2; 
+      font-size: 19px;
+    }
+  }
+}
+section#about {
+  padding-top: 150px;
+  .aboutMTL {
+    margin-bottom: 100px;
+    text-align: center;
+    p {
+      font-size: 18px;
+      span {
+        color: #4c4c4c;
+        display: inline-block;
+        padding: 0 20px;
+      }
+    }
+    > span {
+      color: #99a1a3;
+      font-size: 12px;
+    }
+  }
+  .aboutDetail {
+    .item {
+      text-align: center;
+      float: left;
+      width: 290px;
+      margin-right: 165px;
+      img {
+        position: relative;
+        top: 0;
+        height: 182px;
+        display: inline-block;
+        margin-bottom: 80px;
+        transition: all .4s;
+      }
+      h3 {
+        color: #525252;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #99a1a3;
+        line-height: 1.5;
+      }
+    }
+    .item:last-child {
+      margin-right: 0;
+    }
+    .img1{
+        animation-name: skyset;
+        animation-duration: 1500ms;
+        animation-iteration-count: infinite; /*无限循环*/
+        animation-timing-function: linear;
+      }
+      @-webkit-keyframes skyset {
+        0% {
+          top: 0px;
+        }25% {
+          top: 1px;
+        }50% {
+          top: 2px;
+        } 75% {
+          top: 1px;
+        } 100% {
+          top: 0px;
+        }
+      } .img2{
+        animation-name: skysett;
+        animation-duration: 1500ms;
+        animation-iteration-count: infinite; /*无限循环*/
+        animation-timing-function: cubic-bezier(.19,.19,.58,.66);
+      }
+      @-webkit-keyframes skysett {
+        0% {
+          top: 0px;
+        } 50% {
+          top: -3px;
+        } 100% {
+          top: 0px;
+        }
+      } .img3{
+        animation-name: skysettt;
+        animation-duration: 1500ms;
+        animation-iteration-count: infinite; /*无限循环*/
+        animation-timing-function: cubic-bezier(.19,.19,.58,.66);
+      }
+      @-webkit-keyframes skysettt {
+        0% {
+          top: 0px;
+        } 50% {
+          top: 3px;
+        } 100% {
+          top: 0px;
+        }
+      }
+  }
+}
+section#team {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .aboutTeam {
+    margin-bottom: 60px;
+    text-align: center;
+    p {
+      font-size: 18px;
+      span {
+        color: #4c4c4c;
+        display: inline-block;
+        padding: 0 20px;
+      }
+    }
+    > span {
+      color: #99a1a3;
+      font-size: 12px;
+    }
+  }
+  .tab {
+    text-align: center;
+    margin-bottom: 60px;
+    span {
+      margin-right: 48px;
+      color: #99a1a3;
+      cursor: pointer;
+      &.cur {
+        color: #1c1c1c;
+      }
+    }
+  }
+  .pics {
+    ul {
+      padding: 0;
+    }
+    .hxTeam {
+      li:nth-child(1) {
+        background: url("../images/peoples/yz.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(2) {
+        background: url("../images/peoples/lixin.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(3) {
+        background: url("../images/peoples/ruixin.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(4) {
+        background: url("../images/peoples/zhb.jpeg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(5) {
+        background: url("../images/peoples/tianyou.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(6) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(7) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(8) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(9) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .gwTeam {
+      display: none;
+       li:nth-child(1) {
+      background: url("../images/peoples/suaichu.jpg") no-repeat;
+      background-size: 100% 100%;
+      } li:nth-child(2) {
+        background: url("../images/peoples/tanglin.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(3) {
+        background: url("../images/peoples/laomao.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(4) {
+        background: url("../images/peoples/cuidabao.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(5) {
+        background: url("../images/peoples/liwei.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(6) {
+        background: url("../images/peoples/chenyujun.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(7) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(8) {
+        background: url("../images/peoples/xuyang.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(9) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(10) {
+        background: url("../images/peoples/zhengzuo.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(11) {
+        background: url("../images/peoples/maitao.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(12) {
+        background: url("../images/peoples/jinpeng.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(13) {
+        background: url("../images/peoples/fengtao.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(14) {
+        background: url("../images/peoples/chaoshen.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(15) {
+      background: url("../images/peoples/zulinyao.jpg") no-repeat;
+      background-size: 100% 100%;
+      }li:nth-child(16) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }
+
+    }
+    .hfTeam {
+      display: none;
+       li:nth-child(1) {
+      background: url("../images/peoples/xuemanzi.jpg") no-repeat;
+      background-size: 100% 100%;
+      } li:nth-child(2) {
+        background: url("../images/peoples/hantianqi.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(3) {
+        background: url("../images/peoples/pengjiu.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(4) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(5) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .tzTeam {
+      display: none;
+      li:nth-child(1) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(2) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      } li:nth-child(3) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }li:nth-child(4) {
+        background: url("../images/peoples/default.jpg") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    li {
+      list-style: none;
+      float: left;
+      width: 220px;
+      height: 220px;
+      margin-right: 25px;
+      margin-bottom: 40px;
+      
+      .desc {
+        height: 220px;
+        width: 220px;
+        color: #fff;
+        text-align: center;
+        background-size: 0 0;
+        position: relative;
+        opacity: 0;
+        transition: all .4s;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 220px;
+          height: 0px;
+          background: rgba(30, 89, 173, .6);
+          transition: all .4s;
+        }
+        p {
+          margin: 0;
+          position: relative;
+        }
+        .name {
+          padding-top: 40px;
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .info {
+          line-height: 40px;
+          font-weight: 200;
+        }
+        .descDetail {
+          padding: 0 10px;
+          font-weight: 200;
+          font-size: 12px;
+          text-align: left;
+          line-height: 20px;
+        }
+      }
+      .desc:hover {
+        opacity: 1;
+        &:before {
+          height: 220px;
+        }
+      }
+    }
+   
+    li:nth-child(5n) {
+      margin-right: 0;
+    }
+  }
+}
+section#progress {
+  background: url("../images/progressBg.jpg") no-repeat;
+  background-size: 100% 99%;
+  padding-top: 100px;
+  transition: all .4s;
+  &:hover {
+    background-size: 101% 100%;
+  }
+  .prog {
+    margin-bottom: 100px;
+    text-align: center;
+    p {
+      font-size: 18px;
+      span {
+        color: #fff;
+        display: inline-block;
+        padding: 0 20px;
+      }
+    }
+    > span {
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+  .allProgInfo {
+    position: relative;
+    .progInfo1 {
+      margin: 0 150px;
+      height: 626px;
+      // padding-top: 100px;
+      overflow: hidden;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 150px;
+        width: 900px;
+        height: 4px;
+        background: #fff;
+      }
+      .infoText {
+        position: relative;
+        left: 0;
+        transition: left .4s;
+      }
+      .infoItem {
+        width: 206px;
+        height: 200px;
+        position: absolute;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #fff;
+        }
+      }
+      .infoItem:nth-child(1) {
+        left: 0;
+        top: 40px;
+        &:after {
+          top: 105px;
+          left: 100px;
+        }
+      }.infoItem:nth-child(2) {
+        left: 200px;
+        top: 186px;
+        &:after {
+          top: -40px;
+          left: 100px;
+        }
+
+      }.infoItem:nth-child(3) {
+        left: 300px;
+        top: 40px;
+        &:after {
+          top: 105px;
+          left: 100px;
+        }
+      }.infoItem:nth-child(4) {
+        left: 500px;
+        top: 186px;
+        &:after {
+          top: -40px;
+          left: 100px;
+        }
+      }.infoItem:nth-child(5) {
+        left: 680px;
+        top: 40px;
+        &:after {
+          top: 105px;
+          left: 100px;
+        }
+      }.infoItem:nth-child(6) {
+        left: 900px;
+        top: 186px;
+        &:after {
+          top: -40px;
+          left: 100px;
+        }
+      }
+    }
+    .control {
+      span {
+        position: absolute;
+        top: 127px;
+        width: 36px;
+        height: 66px;
+        cursor: pointer;
+      }
+      .prev {
+        left: 0;
+        background: url("../images/prev.png") no-repeat;
+      }
+      .next {
+        right: 0;
+        background: url("../images/next.png") no-repeat;
+      }
+    }
+  }
+}
+section#projects {
+  padding-top: 100px;
+  padding-bottom: 200px;
+  .proj {
+    margin-bottom: 100px;
+    text-align: center;
+    p {
+      font-size: 18px;
+      span {
+        color: #4c4c4c;
+        display: inline-block;
+        padding: 0 20px;
+      }
+      &.info {
+        font-size: 14px;
+        color: #99a1a3;
+        line-height: 2;
+      }
+    }
+    > span {
+      color: #99a1a3;
+      font-size: 12px;
+    }
+  }
+  .projItems {
+    .btcj, .mxf {
+      width: 500px;
+      float: left;
+      h3 {
+        color: #4c4c4c;
+        text-align: center;
+      }
+      p {
+        color: #99a1a3;
+        line-height: 2;
+      }
+    }
+    .btcj {
+      margin-right: 100px;
+      img {
+        width: 300px;
+        height: 116px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .mxf {
+      img {
+        width: 300px;
+        height: 116px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+footer#aboutUs {
+  background: #313131;
+  color: #fff;
+  padding-bottom: 80px;
+  .logo {
+    p {
+      font-size: 26px;
+      font-weight: 800;
+      padding: 80px 0 40px;
+    }
+  }
+  .left {
+    float: left;
+    a {
+      color: #fff;
+      text-decoration: none;
+      &.l {
+        margin-right: 100px;
+      }
+    }
+  }
+  .right {
+    float: right;
+  }
+}
