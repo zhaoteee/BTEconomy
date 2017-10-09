@@ -8,7 +8,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: 'BTEconomy/dist/',
+  base: '/dist/',
   routes: [
     {
       path: '/',
